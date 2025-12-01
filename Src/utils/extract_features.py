@@ -50,19 +50,14 @@ def prepare_model(image_level = False):
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ])
 
-    # Check if a GPU is available and if not, use a CPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # resnet50 alexnet
-    model = models.resnet50(pretrained=True)  # You can also use 'mobilenet_v3_large'
+    model = models.resnet50(pretrained=True)  
 
-    # Remove the classification head (i.e., the fully connected layers)
     model = nn.Sequential(*(list(model.children())[:-1]))
 
-    # Send the model to the device (CPU or GPU)
     model.to(device)
 
-    # Set the model to evaluation mode
     model.eval()
 
     return model, preprocess

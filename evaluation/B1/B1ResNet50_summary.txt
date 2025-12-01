@@ -1,4 +1,4 @@
-📊 B1 ResNet50 Evaluation Summary
+ B1 ResNet50 Evaluation Summary
 ========================================
 Accuracy: 83.77%
 F1 (Macro): 0.8484

@@ -8,6 +8,7 @@ import cv2
 from torch.utils.data import Dataset
 from PIL import Image
 import torch
+from BoxInfo import BoxInfo
 
 def load_tracking_annot(path):
     with open(path, 'r') as file:

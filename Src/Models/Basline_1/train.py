@@ -61,16 +61,7 @@ class DatasetBuilder:
     
     @staticmethod
     def prepare_dataset(video_ids: List[int], dataset_path: str) -> List:
-        """
-        Prepare dataset from video IDs
-        
-        Args:
-            video_ids: List of video identifiers
-            dataset_path: Root path to dataset directory
-            
-        Returns:
-            List of (image, label) tuples
-        """
+       
         dataset = []
         for video_id in video_ids:
             images_and_labels = annotante(video_id, dataset_path)
@@ -79,12 +70,7 @@ class DatasetBuilder:
     
     @staticmethod
     def create_dataloaders() -> Tuple[DataLoader, DataLoader, DataLoader]:
-        """
-        Create train, validation, and test dataloaders
-        
-        Returns:
-            Tuple of (train_loader, val_loader, test_loader)
-        """
+       
         print("📦 Preparing datasets...")
         
         # Prepare datasets
